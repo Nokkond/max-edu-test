@@ -1,27 +1,31 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h2>Форма подачи заявок в отдел сервиса и качества</h2>
+    <Form/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/Form.vue'
+import Form from './components/Form.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Form
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, Avenir, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  /*-moz-osx-font-smoothing: grayscale;*/
+
+  /*color: #2c3e50;*/
+  min-width: 300px;
+  max-width: 800px;
+  margin: auto;
+
 }
 </style>
