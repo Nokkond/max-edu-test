@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <h2>Форма подачи заявок в отдел сервиса и качества</h2>
-    <Form/>
+    <router-view/>
   </div>
 </template>
 
@@ -10,9 +9,9 @@ import Form from './components/Form.vue'
 
 export default {
   name: 'App',
-  components: {
-    Form
-  }
+  // components: {
+  //   Form
+  // }
 }
 </script>
 

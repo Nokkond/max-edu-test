@@ -1,17 +1,17 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Form from '@/components/Form.vue';
+import SubmitSuccess from "../components/SubmitSuccess";
 
-import adminRoutes from './modules/admin'
+Vue.use(VueRouter);
 
-Vue.use(Router)
+const routes = [
+    { name: 'main', component: Form, path: '/' },
+    { name: 'submit', component: SubmitSuccess, path: '/success' },
+];
 
-const routes = [{
-    path: '*',
-    redirect: {
-        name: 'News'
-    }
-}].concat(submitRoutes)
-export default new Router({
+const router = new VueRouter({
     routes,
-    mode: 'history'
-})
+});
+
+export default router;
