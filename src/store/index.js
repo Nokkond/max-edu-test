@@ -6,9 +6,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     namespaced: true,
-    modules: {
-
-    },
     state: {
         cities: [
             {"id":"1","title":"Выберите город"},
@@ -33,5 +30,4 @@ export default new Vuex.Store({
             state.cities = orderInfo
         },
     },
-    // strict: process.env.NODE_ENV !== 'production'
 })

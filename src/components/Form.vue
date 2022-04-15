@@ -13,7 +13,6 @@
       </div>
     </div>
 
-
     <div class="topic">
       <h4>Тема обращения<span class="star"> *</span></h4>
       <div class="radio_block" v-for='problem in problemsList' :key="problem.id">
@@ -83,12 +82,13 @@ export default {
         formData.append('problem', this.problem)
         if(this.topic==="") formData.append('topic', this.myTopic)
         if(this.myTopic==="") formData.append('topic', this.topic)
-        // if(this.images) formData.append('file', this.images)
+        if(this.images) formData.append('file', this.images)
 
         const headers = { 'Content-Type': 'multipart/form-data' };
         axios.post('https://624d935653326d0cfe4f0ab4.mockapi.io/api/v1/send-form', formData, { headers }).then((res) => {
           console.log(res);
          if (res.data.success===true) this.$router.push({name: 'submit'})
+          else  alert('Ошибка отправки заявки')
         }).catch((error) => {
           console.log(error)
           alert('Ошибка отправки заявки')
@@ -199,7 +199,6 @@ select {
   margin-left: 0px;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
-
 }
 .problem {
   margin-top: 28px;
@@ -221,8 +220,6 @@ textarea:focus {
   color: black;
   border: 1px solid black;
 }
-
-
 
 .download {
   margin-top: 28px;
@@ -280,8 +277,6 @@ h4 {
 
 
 }
-
-/**/
 
 input[type='radio'] {
   position: relative;
